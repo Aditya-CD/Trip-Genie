@@ -1,0 +1,40 @@
+/* Hide everything except .print-section when printing */
+@media print {
+    body * {
+      visibility: hidden !important;
+    }
+  
+    .print-section, .print-section * {
+      visibility: visible !important;
+    }
+  
+    .print-section {
+      position: absolute !important;
+      top: 0;
+      left: 0;
+      width: 100% !important;
+      padding: 2rem;
+      background-color: #ffffff !important;
+      color: #000000 !important;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+  
+    /* Optional: Remove scrollbars or extra styles */
+    .print-section::-webkit-scrollbar {
+      display: none;
+    }
+  
+    /* Prevent page break inside days */
+    .print-section h2,
+    .print-section h3 {
+      page-break-after: avoid;
+    }
+  
+    /* Remove modification textarea and buttons from print */
+    textarea, button {
+      display: none !important;
+    }
+  }
+  
